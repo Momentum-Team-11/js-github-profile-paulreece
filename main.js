@@ -1,5 +1,6 @@
 let url = "https://api.github.com/users/paulreece";
 let repos = "https://api.github.com/orgs/Momentum-Team-11/repos";
+let repoList = document.getElementById("repo-list");
 
 fetch(url)
   .then((res) => res.json())
@@ -20,7 +21,7 @@ fetch(url)
   .then((data) => {
     for (let repo of data) {
       document.querySelector(
-        "#repos"
+        "#repo-list"
       ).innerHTML += `<p class="repoitem"><i class="fa-solid fa-book"></i>    <a href=${repo.url}>${repo.name}</a></p>`;
     }
   });
